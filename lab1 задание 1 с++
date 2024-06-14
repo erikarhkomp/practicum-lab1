@@ -1,0 +1,36 @@
+#include <iostream>
+#include <complex>
+
+using namespace std;
+
+int main() {
+    complex<double> z1(1, 1);
+    complex<double> z2(3, -1);
+    complex<double> z3(-1, 1);
+
+    // Сумма
+    complex<double> sum = z1 + z2;
+    cout << "Сумма: " << sum << std::endl;
+
+    // Разность
+    complex<double> diff = z1 - z2;
+    cout << "Разность: " << diff << std::endl;
+
+    // Произведение
+    complex<double> product = z1 * z2;
+    cout << "Произведение: " << product << std::endl;
+
+    // Частное
+    complex<double> quotient = z1 / z2;
+    cout << "Частное: " << quotient << std::endl;
+
+    // Четвертая степень числа z1
+    complex<double> z1_pow4 = pow(z1, 4);
+    cout << "Четвертая степень числа z1: " << z1_pow4 << std::endl;
+
+    // Корень третьей степени числа z3
+    complex<double> z3_cbrt = pow(z3, 1.0/3);
+    cout << "Корень третьей степени числа z3: " << z3_cbrt << std::endl;
+
+    return 0;
+}
