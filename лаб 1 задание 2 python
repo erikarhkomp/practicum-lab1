@@ -1,0 +1,49 @@
+import math
+
+def f(x):
+    return math.exp(-x) - math.sqrt(x - 1)
+
+def f_prime(x):
+    return -math.exp(-x) - 1/(2*math.sqrt(x - 1))
+
+def bisection(a, b, epsilon):
+    while b - a >= epsilon:
+        c = (a + b) / 2
+        if f(c) == 0.0:
+            break
+        elif f(c) * f(a) < 0:
+            b = c
+        else:
+            a = c
+    return c
+
+def regula_falsi(a, b, epsilon):
+    while abs(b - a) >= epsilon:
+        c = (a*f(b) - b*f(a)) / (f(b) - f(a))
+        if f(c) == 0.0:
+            break
+        elif f(c) * f(a) < 0:
+            b = c
+        else:
+            a = c
+    return c
+
+def newton(x0, epsilon):
+    x = x0
+    while abs(f(x)) >= epsilon:
+        x = x - f(x) / f_prime(x)
+    return x
+
+epsilon = 10**-6
+
+# Метод дихотомии
+root_bisection = bisection(1, 3, epsilon)
+print("Корень методом дихотомии:", root_bisection)
+
+# Метод хорд
+root_regula_falsi = regula_falsi(1, 3, epsilon)
+print("Корень методом хорд:", root_regula_falsi)
+
+# Метод Ньютона
+root_newton = newton(2, epsilon)
+print("Корень методом Ньютона:", root_newton)
