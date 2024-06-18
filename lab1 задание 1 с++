@@ -24,9 +24,9 @@ int main() {
     complex<double> quotient = z1 / z2;
     cout << "Частное: " << quotient << std::endl;
 
-    // Четвертая степень числа z1
-    complex<double> z1_pow4 = pow(z1, 4);
-    cout << "Четвертая степень числа z1: " << z1_pow4 << std::endl;
+    // Четвертая степень числа z3
+    complex<double> z3_pow4 = pow(z3, 4);
+    cout << "Четвертая степень числа z3: " << z3_pow4 << std::endl;
 
     // Корень третьей степени числа z3
     complex<double> z3_cbrt = pow(z3, 1.0/3);
